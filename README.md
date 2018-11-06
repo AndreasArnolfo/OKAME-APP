@@ -17,7 +17,7 @@ Présentation du concept
 Make sure you have Node version >= 6.X and NPM >= 3 (node.js version used 7.5.0 and NPM v. 4.1.2)
 
 #### Clone the repo ####
-$ git clone https://github.com/ddellamico/ionic2-taxi-app.git
+$ git clone https://github.com/AndreasArnolfo/OKAME-APP.git
 
 #### change directory to our repo ####
 cd OKAME-APP
