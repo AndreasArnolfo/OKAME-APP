@@ -25681,3 +25681,42 @@ page-home .map-container {
   width: 100%;
   height: 100%;
 }
+
+page-home .itemm {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+page-home .itemm ion-avatar {
+  width: 50%;
+}
+
+page-home .itemm .droite {
+  width: 50%;
+  height: 100%;
+}
+
+page-home .card_Rounded {
+  border-radius: 14px;
+  margin-top: 110%;
+  height: 25%;
+  position: absolute;
+  z-index: 500;
+}
+
+page-home .card_Rounded .avatar {
+  width: 70px;
+  height: 70px;
+  margin-left: 23%;
+}
+
+page-home .card_Rounded .imgNouri {
+  width: 50%;
+}
