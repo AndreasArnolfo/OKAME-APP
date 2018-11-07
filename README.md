@@ -32,4 +32,5 @@ go to http://0.0.0.0:8100 or http://localhost:8100 in your browser
 # License #
 
 - - - - 
-![picture alt](https://ucarecdn.com/71946d9b-adad-4d6e-9130-0a480ddcc553/ "Title is optional")
+![picture alt](https://ucarecdn.com/71946d9b-adad-4d6e-9130-0a480ddcc553/ "Title is optional")![picture alt](https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Opensource.svg/2000px-Opensource.svg.png "Title is optional")
+
