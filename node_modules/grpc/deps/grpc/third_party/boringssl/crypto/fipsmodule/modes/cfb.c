@@ -72,8 +72,7 @@ void CRYPTO_cfb128_encrypt(const uint8_t *in, uint8_t *out, size_t len,
       n = (n + 1) % 16;
     }
 #if STRICT_ALIGNMENT
-    if (((uintptr_t)in | (uintptr_t)out | (uintptr_t)ivec) % sizeof(size_t) !=
-        0) {
+    if (((size_t)in | (size_t)out | (size_t)ivec) % sizeof(size_t) != 0) {
       while (l < len) {
         if (n == 0) {
           (*block)(ivec, ivec, key);
@@ -89,9 +88,7 @@ void CRYPTO_cfb128_encrypt(const uint8_t *in, uint8_t *out, size_t len,
     while (len >= 16) {
       (*block)(ivec, ivec, key);
       for (; n < 16; n += sizeof(size_t)) {
-        size_t tmp = load_word_le(ivec + n) ^ load_word_le(in + n);
-        store_word_le(ivec + n, tmp);
-        store_word_le(out + n, tmp);
+        *(size_t *)(out + n) = *(size_t *)(ivec + n) ^= *(size_t *)(in + n);
       }
       len -= 16;
       out += 16;
@@ -115,11 +112,9 @@ void CRYPTO_cfb128_encrypt(const uint8_t *in, uint8_t *out, size_t len,
       --len;
       n = (n + 1) % 16;
     }
-    if (STRICT_ALIGNMENT &&
-        ((uintptr_t)in | (uintptr_t)out | (uintptr_t)ivec) % sizeof(size_t) !=
-            0) {
+    if (STRICT_ALIGNMENT && ((size_t)in | (size_t)out | (size_t)ivec) % sizeof(size_t) != 0) {
       while (l < len) {
-        uint8_t c;
+        unsigned char c;
         if (n == 0) {
           (*block)(ivec, ivec, key);
         }
@@ -134,9 +129,9 @@ void CRYPTO_cfb128_encrypt(const uint8_t *in, uint8_t *out, size_t len,
     while (len >= 16) {
       (*block)(ivec, ivec, key);
       for (; n < 16; n += sizeof(size_t)) {
-        size_t t = load_word_le(in + n);
-        store_word_le(out + n, load_word_le(ivec + n) ^ t);
-        store_word_le(ivec + n, t);
+        size_t t = *(size_t *)(in + n);
+        *(size_t *)(out + n) = *(size_t *)(ivec + n) ^ t;
+        *(size_t *)(ivec + n) = t;
       }
       len -= 16;
       out += 16;
@@ -232,3 +227,4 @@ void CRYPTO_cfb128_8_encrypt(const unsigned char *in, unsigned char *out,
     cfbr_encrypt_block(&in[n], &out[n], 8, key, ivec, enc, block);
   }
 }
+

@@ -40,18 +40,6 @@
                                OPENSSL_ARM || OPENSSL_AARCH64) */
 
 
-// Our assembly does not use the GOT to reference symbols, which means
-// references to visible symbols will often require a TEXTREL. This is
-// undesirable, so all assembly-referenced symbols should be hidden. CPU
-// capabilities are the only such symbols defined in C. Explicitly hide them,
-// rather than rely on being built with -fvisibility=hidden.
-#if defined(OPENSSL_WINDOWS)
-#define HIDDEN
-#else
-#define HIDDEN __attribute__((visibility("hidden")))
-#endif
-
-
 // The capability variables are defined in this file in order to work around a
 // linker bug. When linking with a .a, if no symbols in a .o are referenced
 // then the .o is discarded, even if it has constructor functions.
@@ -69,11 +57,11 @@
 // archive, linking on OS X will fail to resolve common symbols. By
 // initialising it to zero, it becomes a "data symbol", which isn't so
 // affected.
-HIDDEN uint32_t OPENSSL_ia32cap_P[4] = {0};
+uint32_t OPENSSL_ia32cap_P[4] = {0};
 
 #elif defined(OPENSSL_PPC64LE)
 
-HIDDEN unsigned long OPENSSL_ppc64le_hwcap2 = 0;
+unsigned long OPENSSL_ppc64le_hwcap2 = 0;
 
 #elif defined(OPENSSL_ARM) || defined(OPENSSL_AARCH64)
 
@@ -81,7 +69,7 @@ HIDDEN unsigned long OPENSSL_ppc64le_hwcap2 = 0;
 
 #if defined(OPENSSL_STATIC_ARMCAP)
 
-HIDDEN uint32_t OPENSSL_armcap_P =
+uint32_t OPENSSL_armcap_P =
 #if defined(OPENSSL_STATIC_ARMCAP_NEON) || defined(__ARM_NEON__)
     ARMV7_NEON |
 #endif
@@ -100,7 +88,7 @@ HIDDEN uint32_t OPENSSL_armcap_P =
     0;
 
 #else
-HIDDEN uint32_t OPENSSL_armcap_P = 0;
+uint32_t OPENSSL_armcap_P = 0;
 #endif
 
 #endif

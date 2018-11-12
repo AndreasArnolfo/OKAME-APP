@@ -192,7 +192,8 @@ static AUTHORITY_INFO_ACCESS *v2i_AUTHORITY_INFO_ACCESS(X509V3_EXT_METHOD
             OPENSSL_PUT_ERROR(X509V3, ERR_R_MALLOC_FAILURE);
             goto err;
         }
-        BUF_strlcpy(objtmp, cnf->name, objlen + 1);
+        strncpy(objtmp, cnf->name, objlen);
+        objtmp[objlen] = 0;
         acc->method = OBJ_txt2obj(objtmp, 0);
         if (!acc->method) {
             OPENSSL_PUT_ERROR(X509V3, X509V3_R_BAD_OBJECT);

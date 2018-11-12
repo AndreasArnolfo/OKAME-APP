@@ -764,13 +764,13 @@ int PEM_read_bio(BIO *bp, char **name, char **header, unsigned char **data,
 
 int PEM_def_callback(char *buf, int size, int rwflag, void *userdata)
 {
-    if (!buf || !userdata || size < 0) {
+    if (!buf || !userdata) {
         return 0;
     }
     size_t len = strlen((char *)userdata);
     if (len >= (size_t)size) {
         return 0;
     }
-    BUF_strlcpy(buf, userdata, (size_t)size);
+    strcpy(buf, (char *)userdata);
     return len;
 }

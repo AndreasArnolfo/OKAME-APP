@@ -1,0 +1,175 @@
+page-login {
+    ion-content {
+      font-family: 'Montserrat', sans-serif;
+      width: 100%;
+      background-size: 100% 100%;
+      overflow: overflow-y auto;
+      background-position: center center;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#9c3c1c+0,db0606+0,c0544c+0,c0544c+6,c0544c+13,ca6951+26,ca6951+43,d37c55+66,db8f5d+90 */
+      background: #9c3c1c; /* Old browsers */
+      background: -moz-linear-gradient(top, #9c3c1c 0%, #db0606 0%, #c0544c 0%, #c0544c 6%, #c0544c 13%, #ca6951 26%, #ca6951 43%, #d37c55 66%, #db8f5d 90%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #9c3c1c 0%,#db0606 0%,#c0544c 0%,#c0544c 6%,#c0544c 13%,#ca6951 26%,#ca6951 43%,#d37c55 66%,#db8f5d 90%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #9c3c1c 0%,#db0606 0%,#c0544c 0%,#c0544c 6%,#c0544c 13%,#ca6951 26%,#ca6951 43%,#d37c55 66%,#db8f5d 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c3c1c', endColorstr='#db8f5d',GradientType=0 ); /* IE6-9 */
+      @keyframes wiki {
+        from {
+          opacity: 0;
+        }
+  
+        to {
+          opacity: 1;
+        }
+      }
+  
+      h1,
+      h3 {
+        color: #fff;
+      }
+  
+      form {
+        margin-bottom: 26px;
+        height: 200px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 4px;
+        margin-top: 20px;
+        animation-direction: alternate;
+        animation-name: wiki;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+  
+        button {
+          margin-top: 20px !important;
+        }
+  
+        .button {
+          border: 1px solid color($colors, primary, base);
+          padding: 10px;
+          background: color($colors, primary, base);
+          color: color($colors, light, base);
+        }
+      }
+  
+      p {
+        font-size: 0.8em;
+        color: #d2d2d2;
+      }
+  
+      ion-label {
+        text-align: center;
+      }
+  
+      ion-input {
+        padding: 5px;
+      }
+  
+      .invalid {
+        border: 1px solid #FF6153;
+      }
+  
+      .error-message .item-inner {
+        border-bottom: 0 !important;
+      }
+  
+      ion-item {
+        border-radius: 4px;
+      }
+  
+      .button {
+        // border: 1px solid color($colors, primary, base);
+        background: white;
+        height: 50px;
+        color: color($colors, primary, base);
+        animation-direction: alternate;
+        animation-name: wiki;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+      }
+  
+      .terms {
+        margin-top: 40px;
+        color: color($colors, light, base);
+        text-align: center;
+      }
+  
+      .logo-text {
+        color: color($colors, light, base);
+        text-align: center;
+        font-size: 1.4em;
+      }
+  
+      .o_section {
+        strong{
+          color: #fff;
+        }
+        margin-top: 10%;
+        animation-direction: alternate;
+        animation-name: wiki;
+        animation-duration: 0.3s;
+        animation-iteration-count: 1;
+  
+        .CoFacebook {
+          margin-bottom: 10%;
+          outline: none;
+          height: 40px;
+          text-align: center;
+          width: 100%;
+          border-radius: 40px;
+          background: rgba(255, 255, 255, 0);
+          border: 2px solid #fff;
+          color: #fff;
+          letter-spacing: 1px;
+          text-shadow: 0;
+          font-size: 15px;
+        }
+        p{
+          margin-top: -8%;
+          text-align: center;
+        }
+        h2 {
+          color: #fff;
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+          margin-bottom: 20%;
+        }
+        
+        h2 span {
+          display: inline-block;
+          vertical-align: baseline;
+          zoom: 1;
+          *display: inline;
+          *vertical-align: auto;
+          position: relative;
+          padding: 0 20px;
+        }
+        
+        h2 span:before, span:after {
+          content: '';
+          display: block;
+          width: 1000px;
+          position: absolute;
+          top: 0.73em;
+          border-top: 1px solid black;
+        }
+        
+        h2 span:before {
+          right: 100%;
+        }
+        
+         h2 span:after {
+          left: 100%;
+        }
+      }
+      .bam{
+        margin-top: -70%;
+      }
+      h2{
+        margin-top: 10%;
+      }
+      .bom{
+        margin-top: -140%;
+      }
+    }
+  
+  }
