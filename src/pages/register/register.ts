@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { Component, NgModule } from '@angular/core';
+import { NavController, ToastController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FirebaseService } from '../../services/firebase.service';
+import { LoginPage } from '../login/login';
 
-@IonicPage()
+
+@NgModule()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
@@ -38,12 +40,13 @@ export class RegisterPage {
       city: new FormControl('', Validators.required),
     });
   }
-
+  
+  
   add(value){
     this.firebaseService.addUser(value)
       .then( res => {
         let toast = this.toastCtrl.create({
-          message: 'User was created successfully',
+          message: 'Votre compte a été créer avec succes',
           duration: 3000
         });
         toast.present();
@@ -55,5 +58,9 @@ export class RegisterPage {
 
   resetFields(){
     this.simple_form.reset()
+  }
+
+  BackToAccueil(){
+    this.navCtrl.push(LoginPage);
   }
 }

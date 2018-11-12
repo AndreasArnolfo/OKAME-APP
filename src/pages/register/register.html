@@ -1,63 +1,51 @@
-<!--
-  Generated template for the RegisterPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>register</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content>
 
-  <form [formGroup]="simple_form" >
-    <ion-item>
+  <div class="backTo">
+    <ion-icon ios="ios-arrow-round-back" (click)="BackToAccueil()"></ion-icon>
+  </div>
+
+  <form [formGroup]="simple_form" class="formRegis">
+    <ion-item class="Dam">
       <ion-label floating >Nom</ion-label>
       <ion-input type="text"  formControlName="nom" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >Prenom</ion-label>
       <ion-input type="text"  formControlName="prenom" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >mail</ion-label>
       <ion-input type="text"  formControlName="mail" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >password</ion-label>
       <ion-input type="text"  formControlName="password" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >nulero de rue</ion-label>
       <ion-input type="number" formControlName="NbRue" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >rue</ion-label>
       <ion-input type="text" formControlName="rue" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >code postal</ion-label>
       <ion-input type="number" formControlName="postal" class="form-controll" required></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item class="Dam">
       <ion-label floating >city</ion-label>
       <ion-input type="text" formControlName="city" class="form-controll" required></ion-input>
     </ion-item>
 
-
   </form>
-  <button ion-button full [disabled]="!simple_form.valid" (click)="add(simple_form.value)" type="submit">Add</button>
+  <button ion-button class="sweetybutton" [disabled]="!simple_form.valid" (click)="add(simple_form.value)" type="submit">Valider</button>
 
 </ion-content>
