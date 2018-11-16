@@ -1,0 +1,83 @@
+.infoUser{
+  background:#d80027;
+  color: white;
+  width: 88%;
+  height:350px;
+  border-radius: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 36px;
+  font-size: 10px;
+  font-family: MontserratRegular;
+
+  .photoUserProfil {
+    width: 93px;
+    height: 93px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -60px;
+    box-shadow: #2d2d2d 1px 1px 10px;
+    margin-bottom: -20px;
+
+    img {
+      width: 500px;
+    }
+  }
+
+  .textUser{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    p{
+      font-size: 12px;
+    }
+
+    #borderProfil{
+      border: white 2px solid;
+      border-radius: 15px;
+      width: 182px;
+      height: 41px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .description{
+      width: 57%;
+      text-align: justify;
+    }
+  }
+}
+
+#note{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.groupeFav img{
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+#croix{
+  background: #d80027;
+  width: 57px;
+  height: 57px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

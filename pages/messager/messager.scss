@@ -1,0 +1,49 @@
+.boxPair{
+  background: #f3eeee;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+
+  .boxMessagerPhoto{
+    width: 27%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .borderMessagerPhoto{
+      width: 72px;
+      height: 72px;
+      border-radius: 36px;
+      border: #d80027 1px solid;
+      overflow: hidden;
+      padding: 1px;
+      object-fit: cover;
+    }
+  }
+
+  .boxMessagerText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 73%;
+
+    .boxMessagerTextTitle{
+      height: 40%;
+      width: 95%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .boxMessagerTextContent{
+      height: 60%;
+      width: 95%;
+      text-align: justify-all;
+      font-size: 8px;
+      font-family: MontserratRegular;
+    }
+  }
+}
