@@ -4,7 +4,7 @@
     <ion-icon ios="ios-arrow-round-back" (click)="BackToAccueil()"></ion-icon>
   </div>
 
-  <form [formGroup]="simple_form" class="formRegis">
+  <form (ngSubmit)="signup()" [formGroup]="simple_form" class="formRegis">
     <ion-item class="Dam">
       <ion-label floating >Nom</ion-label>
       <ion-input type="text"  formControlName="nom" class="form-controll" required></ion-input>
@@ -16,15 +16,16 @@
     </ion-item>
 
     <ion-item class="Dam">
-      <ion-label floating >mail</ion-label>
-      <ion-input type="text"  formControlName="mail" class="form-controll" required></ion-input>
-    </ion-item>
+      <ion-label floating >email</ion-label>
+			<ion-input type="text" formControlName="email"></ion-input>
+		</ion-item>
 
-    <ion-item class="Dam">
-      <ion-label floating >password</ion-label>
-      <ion-input type="text"  formControlName="password" class="form-controll" required></ion-input>
-    </ion-item>
+		<ion-item class="Dam">
+      <ion-label floating >mot de passe</ion-label>
+			<ion-input type="password" formControlName="password"></ion-input>
+		</ion-item>
 
+	
     <ion-item class="Dam">
       <ion-label floating >nulero de rue</ion-label>
       <ion-input type="number" formControlName="NbRue" class="form-controll" required></ion-input>

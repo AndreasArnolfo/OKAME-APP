@@ -18,6 +18,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environment/environment';
 import { EntrancePage } from '../pages/entrance/entrance';
+import { SigninPage } from '../pages/signin/signin';
+import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Facebook } from '@ionic-native/facebook';
+import { MarkersProvider } from '../providers/markers/markers';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,13 +34,15 @@ import { EntrancePage } from '../pages/entrance/entrance';
     RegisterPage,
     LoginPage,
     EntrancePage,
+    SigninPage
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     IonicModule.forRoot(MyApp),
-    AngularFirestoreModule
-
+    AngularFirestoreModule,
+    FormsModule,                               // <========== Add this line!
+    ReactiveFormsModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -42,6 +52,7 @@ import { EntrancePage } from '../pages/entrance/entrance';
     RegisterPage,
     LoginPage,
     EntrancePage,
+    SigninPage
   ],
   providers: [
     StatusBar,
@@ -49,6 +60,11 @@ import { EntrancePage } from '../pages/entrance/entrance';
     FirebaseService,
     Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    AuthService,
+    AngularFireAuth,
+    Facebook,
+    MarkersProvider,
+    NativeGeocoder
     
   ]
 })

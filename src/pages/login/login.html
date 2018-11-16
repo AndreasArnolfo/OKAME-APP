@@ -5,32 +5,7 @@
     <h3><i>Rejoins la meute !</i></h3>
   </div>
 
-  <button *ngIf="initState" color='light' ion-button block (click)="loginViaFacebook()">
-    Se connecter avec Facebook
-  </button>
-
-  <form *ngIf="initState" [formGroup]="loginForm" (submit)="loginUser()" novalidate>
-
-    <ion-label color='primary' stacked>Email</ion-label>
-    <ion-input formControlName="email" type="email" placeholder="username@domain.com" [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty"></ion-input>
-
-    <ion-label color='primary' stacked>Password</ion-label>
-    <ion-input formControlName="password" type="password" placeholder="password" [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
-
-    <button ion-button block type="submit" [disabled]="!loginForm.valid">
-      Login
-    </button>
-  </form>
-
-
-  <button *ngIf="initState" color="dark" clear (click)="goToSignup()">
-    Create a new account
-  </button>
-
-  <button *ngIf="initState" color='light' ion-button block clear (click)="goToResetPassword()">
-    I forgot my password
-  </button>
-
+  
   <div class='o_section'>
 
     <button *ngIf="!initState" class="CoFacebook" (click)="loginViaFacebook()">
@@ -48,7 +23,7 @@
     <p>En t'inscrivant via Facebook ou par inscription classique, tu accepte les <strong>Conditions d'utilisations</strong> et la <strong>politique de confidetialité.</strong></p>
 
     <h2>Déjà membres ?</h2>
-    <button *ngIf="!initState" class="CoFacebook bom" (click)="initState = true">
+    <button *ngIf="!initState" class="CoFacebook bom" (click)="openSignin()">
     Connecte-toi !
     </button>
 
