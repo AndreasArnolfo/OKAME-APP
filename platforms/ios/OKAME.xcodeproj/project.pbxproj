@@ -5,7 +5,6 @@
 	};
 	objectVersion = 48;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		07058CE68CFB4719847702A5 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B214EDC07AC416EAEA2015A /* Protobuf.framework */; };
@@ -43,6 +42,7 @@
 		8AFDC6D8219DAA7B004382D6 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFDC6D7219DAA7B004382D6 /* ExternalAccessory.framework */; };
 		8AFDC6DA219DAA7C004382D6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFDC6D9219DAA7C004382D6 /* MapKit.framework */; };
 		8AFDC6DE219ED02E004382D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AFDC6DD219ED02E004382D6 /* GoogleService-Info.plist */; };
+		8AFDC6E1219EFB97004382D6 /* google-services.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AFDC6E0219EFB97004382D6 /* google-services.json */; };
 		8E7C975DF78D43F281A678C0 /* GCDWebServerFileRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8D559C002743EC81A7BCB3 /* GCDWebServerFileRequest.m */; };
 		939756D7732E4748BEBD1D14 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6556266149D44D7B8B894E94 /* libz.tbd */; };
 		9A59AA01921B4320BD7153D9 /* CDVIonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 23885D64CEDC4B9AB0D0D244 /* CDVIonicKeyboard.m */; };
@@ -165,6 +165,7 @@
 		8AFDC6D9219DAA7C004382D6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8AFDC6DD219ED02E004382D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8AFDC6DF219ED0C5004382D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8AFDC6E0219EFB97004382D6 /* google-services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "google-services.json"; path = "../../../../../../Downloads/google-services.json"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* OKAME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OKAME-Info.plist"; path = "OKAME/OKAME-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
 		8E999C836C064710A8D1271A /* GCDWebServerMultiPartFormRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerMultiPartFormRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerMultiPartFormRequest.m"; sourceTree = "<group>"; };
 		939B6EA65698425581F23E84 /* GCDWebServerDataResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerDataResponse.h; path = "cordova-plugin-ionic-webview/GCDWebServerDataResponse.h"; sourceTree = "<group>"; };
@@ -300,6 +301,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8AFDC6E0219EFB97004382D6 /* google-services.json */,
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* OKAME-Info.plist */,
@@ -470,7 +472,7 @@
 				LastUpgradeCheck = 510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = XFBK547UK4;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -530,6 +532,7 @@
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				8AFDC6DE219ED02E004382D6 /* GoogleService-Info.plist in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				8AFDC6E1219EFB97004382D6 /* google-services.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +616,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = XFBK547UK4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -651,6 +656,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okame.app;
 				PRODUCT_NAME = OKAME;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -668,6 +674,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = XFBK547UK4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -704,6 +712,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okame.app;
 				PRODUCT_NAME = OKAME;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/$(PROJECT_NAME)/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

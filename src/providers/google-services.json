@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "71426874483",
+    "firebase_url": "https://okame-26254.firebaseio.com",
+    "project_id": "okame-26254",
+    "storage_bucket": "okame-26254.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71426874483:android:160dac6ffdcfbef2",
+        "android_client_info": {
+          "package_name": "com.okame.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71426874483-ea10to3tegt7c39pr085fjjj4esjpdlb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAabpDCAzz83X26Ev_RGCdoCBHmQT0Cuic"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

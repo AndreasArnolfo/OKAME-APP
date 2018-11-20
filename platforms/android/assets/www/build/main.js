@@ -6,7 +6,7 @@ webpackJsonp([1],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_firebase_service__ = __webpack_require__(275);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(157);
@@ -90,10 +90,10 @@ var RegisterPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-register',template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/pages/register/register.html"*/'<ion-content>\n\n  <div class="backTo">\n    <ion-icon ios="ios-arrow-round-back" (click)="BackToAccueil()"></ion-icon>\n  </div>\n\n  <form (ngSubmit)="signup()" [formGroup]="simple_form" class="formRegis">\n    <ion-item class="Dam">\n      <ion-label floating >Nom</ion-label>\n      <ion-input type="text"  formControlName="nom" class="form-controll" required></ion-input>\n    </ion-item>\n\n    <ion-item class="Dam">\n      <ion-label floating >Prenom</ion-label>\n      <ion-input type="text"  formControlName="prenom" class="form-controll" required></ion-input>\n    </ion-item>\n\n    <ion-item class="Dam">\n      <ion-label floating >email</ion-label>\n			<ion-input type="text" formControlName="email"></ion-input>\n		</ion-item>\n\n		<ion-item class="Dam">\n      <ion-label floating >mot de passe</ion-label>\n			<ion-input type="password" formControlName="password"></ion-input>\n		</ion-item>\n\n	\n    <ion-item class="Dam">\n      <ion-label floating >nulero de rue</ion-label>\n      <ion-input type="number" formControlName="NbRue" class="form-controll" required></ion-input>\n    </ion-item>\n\n    <ion-item class="Dam">\n      <ion-label floating >rue</ion-label>\n      <ion-input type="text" formControlName="rue" class="form-controll" required></ion-input>\n    </ion-item>\n\n    <ion-item class="Dam">\n      <ion-label floating >code postal</ion-label>\n      <ion-input type="number" formControlName="postal" class="form-controll" required></ion-input>\n    </ion-item>\n\n    <ion-item class="Dam">\n      <ion-label floating >city</ion-label>\n      <ion-input type="text" formControlName="city" class="form-controll" required></ion-input>\n    </ion-item>\n\n  </form>\n  <button ion-button class="sweetybutton" [disabled]="!simple_form.valid" (click)="add(simple_form.value)" type="submit">Valider</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/pages/register/register.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_3__services_firebase_service__["a" /* FirebaseService */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object])
     ], RegisterPage);
@@ -111,7 +111,7 @@ var RegisterPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_register__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signin_signin__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__(67);
@@ -174,7 +174,7 @@ var LoginPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-login',template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/pages/login/login.html"*/'<ion-content padding class="no-scroll">\n  \n  <div text-center class="HeadInsc">\n    <h1>Insciption</h1><br>\n    <h3><i>Rejoins la meute !</i></h3>\n  </div>\n\n  \n  <div class=\'o_section\'>\n\n    <button *ngIf="!initState" class="CoFacebook" (click)="loginViaFacebook()">\n      Se connecter avec <ion-icon name="logo-facebook"></ion-icon>\n    </button>\n    <p>Rien ne sera publier sans ton accord</p>\n    <h2>\n      <span>OU</span>\n    </h2>\n\n    <button *ngIf="!initState" color=\'light\' class="CoFacebook bam" (click)="goToSignup()">\n      inscription OKAME <ion-icon ios="ios-flame" md="md-flame"></ion-icon>\n    </button>\n\n    <p>En t\'inscrivant via Facebook ou par inscription classique, tu accepte les <strong>Conditions d\'utilisations</strong> et la <strong>politique de confidetialité.</strong></p>\n\n    <h2>Déjà membres ?</h2>\n    <button *ngIf="!initState" class="CoFacebook bom" (click)="openSignin()">\n    Connecte-toi !\n    </button>\n\n  </div>\n\n</ion-content>'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/pages/login/login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], LoginPage);
     return LoginPage;
 }());
@@ -281,7 +281,7 @@ var MarkersProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,7 +322,7 @@ var ListPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-list',template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/pages/list/list.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], ListPage);
     return ListPage;
     var ListPage_1;
@@ -393,7 +393,7 @@ var FirebaseService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EntrancePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -436,7 +436,7 @@ var EntrancePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-entrance',template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/pages/entrance/entrance.html"*/'<!--\n  Generated template for the EntrancePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/pages/entrance/entrance.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]])
     ], EntrancePage);
     return EntrancePage;
 }());
@@ -466,7 +466,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(274);
@@ -562,7 +562,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_18_angularfire2_auth__["a" /* AngularFireAuth */],
                 __WEBPACK_IMPORTED_MODULE_20__ionic_native_facebook__["a" /* Facebook */],
                 __WEBPACK_IMPORTED_MODULE_21__providers_markers_markers__["a" /* MarkersProvider */],
-                __WEBPACK_IMPORTED_MODULE_22__ionic_native_native_geocoder__["a" /* NativeGeocoder */]
+                __WEBPACK_IMPORTED_MODULE_22__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
             ]
         })
     ], AppModule);
@@ -579,7 +579,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(80);
@@ -656,13 +656,13 @@ var MyApp = /** @class */ (function () {
         this.nav.setRoot(page.component);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/app/app.html"*/'<ion-menu [content]="content" >\n  <ion-header class="menuBG">\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/app/app.html"*/'<ion-menu [content]="content" >\n  <ion-header >\n    <ion-toolbar class="menuBG">\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_9__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_9__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]])
     ], MyApp);
     return MyApp;
 }());
@@ -797,7 +797,7 @@ var AuthService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet__ = __webpack_require__(345);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_leaflet___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_leaflet__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__ = __webpack_require__(59);
@@ -818,14 +818,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = /** @class */ (function () {
     // read collection
-    function HomePage(navCtrl, afs, alertCtrl, nativeGeocoder, markersProvier) {
+    function HomePage(navCtrl, afs, alertCtrl, nativeGeocoder, markersProvier, modalCtrl) {
         this.navCtrl = navCtrl;
         this.afs = afs;
         this.alertCtrl = alertCtrl;
         this.nativeGeocoder = nativeGeocoder;
         this.markersProvier = markersProvier;
+        this.modalCtrl = modalCtrl;
     }
     HomePage.prototype.ionViewDidEnter = function () {
         this.loadmap();
@@ -851,64 +853,39 @@ var HomePage = /** @class */ (function () {
         }).on('locationerror', function (err) {
             alert(err.message);
         });
-        this.map.on('geosearch_showlocation', function (adress) {
-            __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.marker([adress.x, adress.y]).addTo(this.map);
-        });
-    };
-    HomePage.prototype.addMarker = function (adress) {
-        var _this = this;
-        var prompt = this.alertCtrl.create({
-            title: 'Add Marker',
-            message: "Enter location",
-            inputs: [
-                {
-                    name: 'city',
-                    placeholder: 'City'
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Save',
-                    handler: function (data) {
-                        _this.geoCodeandAdd(adress);
-                    }
-                }
-            ]
-        });
-        prompt.present();
-    };
-    HomePage.prototype.geoCodeandAdd = function (adress) {
-        var _this = this;
-        this.nativeGeocoder.forwardGeocode(adress)
-            .then(function (coordinates) {
-            var markerGroup = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.featureGroup();
-            var marker = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', function () {
-                alert('Marker clicked');
+        var initialMarkers = [];
+        this.afs.collection('markers').ref.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                initialMarkers.push(doc.data());
             });
-            markerGroup.addLayer(marker);
-            _this.map.addLayer(markerGroup);
-        })
-            .catch(function (error) { return console.log(error); });
-    };
-    HomePage.prototype.loadMarkers = function () {
-        var _this = this;
-        this.markersProvier.getAllMarkers().subscribe(function (markers) {
-            markers.forEach(function (singlemarker) {
+        });
+        var adress = initialMarkers[0].NbRue + ' ' + initialMarkers[0].rue + ' ' + initialMarkers[0].postal + ' ' + initialMarkers[0].city;
+        initialMarkers.map(function (el) {
+            _this.nativeGeocoder.forwardGeocode(adress)
+                .then(function (coordinates) {
                 var markerGroup = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.featureGroup();
-                var marker = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a
-                    .marker([singlemarker.latitude, singlemarker.longitude])
-                    .on("click", function () {
-                    alert(singlemarker.message);
+                var marker = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', function () {
+                    alert('Marker clicked');
                 });
                 markerGroup.addLayer(marker);
                 _this.map.addLayer(markerGroup);
+            })
+                .catch(function (error) { return console.log(error); });
+            _this.markersProvier.getAllMarkers().subscribe(function (markers) {
+                markers.forEach(function (singlemarker) {
+                    var markerGroup = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.featureGroup();
+                    var marker = __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a
+                        .marker([singlemarker.latitude, singlemarker.longitude])
+                        .on("click", function () {
+                        alert(singlemarker.message);
+                    });
+                    markerGroup.addLayer(marker);
+                    _this.map.addLayer(markerGroup);
+                });
             });
+        });
+        this.map.on('geosearch_showlocation', function (adress) {
+            __WEBPACK_IMPORTED_MODULE_2_leaflet___default.a.marker([adress.x, adress.y]).addTo(this.map);
         });
     };
     __decorate([
@@ -919,9 +896,10 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/pages/home/home.html"*/'<ion-content>\n  <div class="map-container">\n    <div id="map" style="width: 100%; height: 100%">\n    </div>\n  </div>\n\n  <ion-card class="card_Rounded">\n\n    <ion-item class="itemm">\n      <ion-avatar item-start>\n        <img class="avatar" src="http://www.web-soluces.net/webmaster/avatar/FaceCo-Homme.png">\n        <!--<h2 style="margin-left: 15%;">thomas malll</h2>-->\n        <ion-item *ngFor="let item of items">\n          {{item}}\n        </ion-item>\n        <p style="margin-left: 15%;">3/4 convives</p>\n        <h3 style="margin-left: 15%;">Mardi 23 OCT. 20H00</h3>\n\n      </ion-avatar>\n\n      <div class="droite">\n        <img src="../../assets/imgs/tajin.jpg">\n      </div>\n    </ion-item>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object, __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */]) === "function" && _a || Object, __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_native_geocoder__["a" /* NativeGeocoder */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_markers_markers__["a" /* MarkersProvider */]])
+            __WEBPACK_IMPORTED_MODULE_5__providers_markers_markers__["a" /* MarkersProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]])
     ], HomePage);
     return HomePage;
     var _a;
@@ -938,7 +916,7 @@ var HomePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SigninPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -981,7 +959,7 @@ var SigninPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-signin',template:/*ion-inline-start:"/Users/deas/Desktop/OKAME-APP/src/pages/signin/signin.html"*/'<ion-content>\n  <form (ngSubmit)="login()" [formGroup]="loginForm">\n    <ion-list inset>\n\n      <ion-item class="Dam">\n        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>\n      </ion-item>\n\n      <ion-item class="Dam">\n        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>\n      </ion-item>\n\n    </ion-list>\n\n    <div padding-horizontal> \n      <div class="form-error">{{loginError}}</div>\n\n      <button ion-button class="sweetybutton" type="submit" [disabled]="!loginForm.valid">Log in</button>\n      <div class="login-footer">\n        <p>\n          <a href="#">Forgot password?</a>\n          If you\'re a new user, please sign up.\n        </p>\n      </div>\n    </div>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/deas/Desktop/OKAME-APP/src/pages/signin/signin.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]])
     ], SigninPage);

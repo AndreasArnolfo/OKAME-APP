@@ -4,4 +4,7 @@
    <FileRef
       location = "group:OKAME.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../../../../Downloads/google-services.json">
+   </FileRef>
 </Workspace>

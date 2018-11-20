@@ -5,12 +5,10 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { NativeGeocoder, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { MarkersProvider } from '../../providers/markers/markers';
 import { ModalController } from 'ionic-angular';
-import { firestore } from 'firebase/app';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
-
 })
 
 export class HomePage {
@@ -20,14 +18,13 @@ export class HomePage {
   // read collection
   constructor(
     public navCtrl: NavController,
-    public afs: AngularFirestore, 
+    public afs: AngularFirestore,
     public alertCtrl: AlertController,
     private nativeGeocoder: NativeGeocoder,
     public markersProvier: MarkersProvider,
     public modalCtrl: ModalController,
   ) {
   }
-
 
   ionViewDidEnter() {
     this.loadmap();
@@ -56,88 +53,50 @@ export class HomePage {
     })
 
 
-    let initialMarkers = []; 
+    let initialMarkers = [];
 
     this.afs.collection('markers').ref.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
+        console.log(doc.data());
         initialMarkers.push(doc.data());
       });
+      let address = initialMarkers[0].NbRue + ' ' + initialMarkers[0].rue + ' ' + initialMarkers[0].postal + ' ' + initialMarkers[0].city;
+
+      initialMarkers.map(el => {
+        this.nativeGeocoder.forwardGeocode(address)
+          .then((coordinates: NativeGeocoderForwardResult[]) => {
+            let markerGroup = leaflet.featureGroup();
+            let markerData: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
+              alert('Marker clicked');
+            })
+            markerGroup.addLayer(markerData);
+            this.map.addLayer(markerGroup);
+          })
+          .catch((error: any) => console.log(error));
+
+        this.markersProvier.getAllMarkers().subscribe((markers: any) => {
+          markers.forEach(singlemarker => {
+            let markerGroup = leaflet.featureGroup();
+
+            let marker: any = leaflet
+              .marker([singlemarker.latitude, singlemarker.longitude])
+              .on("click", () => {
+                alert(singlemarker.message);
+              });
+            markerGroup.addLayer(marker);
+            this.map.addLayer(markerGroup);
+          });
+        });
+      })
     });
 
-    initialMarkers.map(el => {
-      el
-    })
-
-    let address = initialMarkers[0].NbRue + ' ' + initialMarkers[0].rue  + ' ' + initialMarkers[0].postal + ' ' + initialMarkers[0].city;
-    
     this.map.on('geosearch_showlocation', function (adress) {
       leaflet.marker([adress.x, adress.y]).addTo(this.map)
-    })   
+    })
   }
 
-
-
-    addMarker(adress) {  
-      let prompt = this.alertCtrl.create({
-        title: 'Add Marker',
-        message: "Enter location",
-        inputs: [
-          {
-            name: 'city',
-            placeholder: 'City'
-          },
-        ],
-        buttons: [
-          {
-            text: 'Cancel',
-            handler: data => {
-              console.log('Cancel clicked');
-            }
-          },
-          {
-            text: 'Save',
-            handler: data => {
-              
-              this.geoCodeandAdd(adress);
-            }
-          }
-        ]
-      });
-      prompt.present();
-    }
-
-    geoCodeandAdd(adress) {
-      this.nativeGeocoder.forwardGeocode(adress)
-      .then((coordinates: NativeGeocoderForwardResult[]) => {
-        let markerGroup = leaflet.featureGroup();
-        let marker: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
-        alert('Marker clicked');
-      })
-      markerGroup.addLayer(marker);
-      this.map.addLayer(markerGroup);
-
-      })
-      .catch((error: any) => console.log(error));
-    }
-
-    loadMarkers() {
-      this.markersProvier.getAllMarkers().subscribe((markers: any) => {
-        markers.forEach(singlemarker => {
-          let markerGroup = leaflet.featureGroup();
-   
-          let marker: any = leaflet
-            .marker([singlemarker.latitude, singlemarker.longitude])
-            .on("click", () => {
-              alert(singlemarker.message);
-            });
-          markerGroup.addLayer(marker);
-          this.map.addLayer(markerGroup);
-        });
-      });
-    }
-  
-  presentModal() {
+  /*presentModal() {
     const modal = this.modalCtrl.create(ModalPage);
     modal.present();
-  }
+  }*/
 }

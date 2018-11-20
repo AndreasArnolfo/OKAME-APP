@@ -24,9 +24,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Facebook } from '@ionic-native/facebook';
 import { MarkersProvider } from '../providers/markers/markers';
-import { NativeGeocoder } from '@ionic-native/native-geocoder';
-
-@NgModule({
+import { NativeGeocoder } from '@ionic-native/native-geocoder';@NgModule({
   declarations: [
     MyApp,
     HomePage,
@@ -64,8 +62,7 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';
     AngularFireAuth,
     Facebook,
     MarkersProvider,
-    NativeGeocoder
-    
+    NativeGeocoder,
   ]
 })
 export class AppModule {}
