@@ -4,7 +4,6 @@ import leaflet from 'leaflet';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { NativeGeocoder, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { MarkersProvider } from '../../providers/markers/markers';
-import { ModalController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -15,14 +14,13 @@ export class HomePage {
   @ViewChild('map') mapContainer: ElementRef;
   map: any;
   items;
-  // read collection
   constructor(
     public navCtrl: NavController,
     public afs: AngularFirestore,
     public alertCtrl: AlertController,
     private nativeGeocoder: NativeGeocoder,
     public markersProvier: MarkersProvider,
-    public modalCtrl: ModalController,
+
   ) {
   }
 
@@ -36,7 +34,6 @@ export class HomePage {
       attributions: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
       minZoom: 3,
       maxZoom: 18,
-
     }).addTo(this.map);
     this.map.locate({
       setView: true,
@@ -44,7 +41,7 @@ export class HomePage {
     }).on('locationfound', (e) => {
       let markerGroup = leaflet.featureGroup();
       let marker: any = leaflet.marker([e.latitude, e.longitude]).on('click', () => {
-        alert('Marker clicked');
+        alert('location');
       })
       markerGroup.addLayer(marker);
       this.map.addLayer(markerGroup);
@@ -57,46 +54,40 @@ export class HomePage {
 
     this.afs.collection('markers').ref.get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         initialMarkers.push(doc.data());
       });
+
       let address = initialMarkers[0].NbRue + ' ' + initialMarkers[0].rue + ' ' + initialMarkers[0].postal + ' ' + initialMarkers[0].city;
+      
 
       initialMarkers.map(el => {
         this.nativeGeocoder.forwardGeocode(address)
           .then((coordinates: NativeGeocoderForwardResult[]) => {
             let markerGroup = leaflet.featureGroup();
             let markerData: any = leaflet.marker([coordinates[0].latitude, coordinates[0].longitude]).on('click', () => {
-              alert('Marker clicked');
+              alert('Marker Andreas');
             })
             markerGroup.addLayer(markerData);
             this.map.addLayer(markerGroup);
           })
-          .catch((error: any) => console.log(error));
+      })
+        .catch((error: any) => console.log(error));
 
-        this.markersProvier.getAllMarkers().subscribe((markers: any) => {
-          markers.forEach(singlemarker => {
-            let markerGroup = leaflet.featureGroup();
-
-            let marker: any = leaflet
-              .marker([singlemarker.latitude, singlemarker.longitude])
-              .on("click", () => {
-                alert(singlemarker.message);
-              });
-            markerGroup.addLayer(marker);
-            this.map.addLayer(markerGroup);
-          });
+      this.markersProvier.getAllMarkers().subscribe((markers: any) => {
+        markers.forEach(singlemarker => {
+          let markerGroup = leaflet.featureGroup();
+          let marker: any = leaflet
+            .marker([singlemarker[0].latitude, singlemarker[0].longitude])
+            .on("click", () => {
+              alert('coucou');
+            });
+          markerGroup.addLayer(marker);
+          this.map.addLayer(markerGroup);
         });
       })
     });
-
     this.map.on('geosearch_showlocation', function (adress) {
       leaflet.marker([adress.x, adress.y]).addTo(this.map)
     })
   }
-
-  /*presentModal() {
-    const modal = this.modalCtrl.create(ModalPage);
-    modal.present();
-  }*/
 }

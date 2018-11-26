@@ -6,7 +6,12 @@ import { LoginPage } from '../login/login';
 import { AuthService } from '../../services/auth.service';
 import { SigninPage } from '../signin/signin';
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import {
+  NativeGeocoder,
+  NativeGeocoderForwardResult
+} from "@ionic-native/native-geocoder";
+ 
+import { MarkersProvider } from "../../providers/markers/markers";
 @NgModule()
 @Component({
   selector: 'page-register',
@@ -25,7 +30,9 @@ export class RegisterPage {
     public toastCtrl: ToastController,
     private auth: AuthService,
     public fb: FormBuilder,
-    public afs: AngularFirestore
+    public afs: AngularFirestore,
+    private nativeGeocoder: NativeGeocoder,
+    public markersProvier: MarkersProvider,
   ) {
   }
 
@@ -76,8 +83,18 @@ export class RegisterPage {
       nom: value.nom,
       prenom: value.prenom
     })
-  }
 
+
+    let address = value[0].NbRue + '' + value[0].rue + '' + value[0].postal + '' + value[0].city;
+
+      this.nativeGeocoder
+        .forwardGeocode(address)
+        .then((coordinates: NativeGeocoderForwardResult) => {
+          this.markersProvier.saveMarker(coordinates[0]);
+          console.log(coordinates);
+        })
+        .catch((error: any) => console.log(error));
+  }
   BackToAccueil() {
     this.navCtrl.push(LoginPage);
   }

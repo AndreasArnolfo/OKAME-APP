@@ -8,16 +8,12 @@ export class MarkersProvider {
   }
 
   saveMarker(coords) {
-    this.afs
-      .collection("markers")
+    console.log('cest good')
+    this.afs.collection("/markers")
       .add({
         latitude: coords.latitude,
         longitude: coords.longitude,
-        message: "hi buddy"
       })
-      .then(() => {
-        alert("Added");
-      });
   }
 
   getAllMarkers() {

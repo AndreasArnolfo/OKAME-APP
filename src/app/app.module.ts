@@ -24,7 +24,19 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Facebook } from '@ionic-native/facebook';
 import { MarkersProvider } from '../providers/markers/markers';
-import { NativeGeocoder } from '@ionic-native/native-geocoder';@NgModule({
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { AvisPage } from '../pages/avis/avis';
+import { MessagerPage } from '../pages/messenger/messager';
+import { ProfilPage } from '../pages/profil/profil';
+import { ProfilPlusPage } from '../pages/profilPlus/profilPlus';
+import { RepasPage } from '../pages/repas/repas';
+import { ChatProvider } from '../providers/chat/chat';
+import { RequestsProvider } from '../providers/request/request';
+import { UserProvider } from '../providers/user/user';
+import { MessageriPage } from '../pages/messageri/messageri';
+
+
+@NgModule({
   declarations: [
     MyApp,
     HomePage,
@@ -32,7 +44,13 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';@NgModule({
     RegisterPage,
     LoginPage,
     EntrancePage,
-    SigninPage
+    SigninPage,
+    AvisPage,
+    MessagerPage,
+    ProfilPage,
+    ProfilPlusPage,
+    RepasPage,
+    MessageriPage
   ],
   imports: [
     BrowserModule,
@@ -50,7 +68,14 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';@NgModule({
     RegisterPage,
     LoginPage,
     EntrancePage,
-    SigninPage
+    SigninPage,
+    AvisPage,
+    MessagerPage,
+    ProfilPage,
+    ProfilPlusPage,
+    RepasPage,
+    MessageriPage
+    
   ],
   providers: [
     StatusBar,
@@ -63,6 +88,9 @@ import { NativeGeocoder } from '@ionic-native/native-geocoder';@NgModule({
     Facebook,
     MarkersProvider,
     NativeGeocoder,
+    ChatProvider,
+    RequestsProvider,
+    UserProvider,
   ]
 })
 export class AppModule {}

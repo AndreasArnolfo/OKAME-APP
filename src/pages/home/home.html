@@ -6,22 +6,15 @@
 
   <ion-card class="card_Rounded">
 
-    <ion-item class="itemm">
+    <ion-item class="itemm" (click)="openModal()">
       <ion-avatar item-start>
-        <img class="avatar" src="http://www.web-soluces.net/webmaster/avatar/FaceCo-Homme.png">
-        <!--<h2 style="margin-left: 15%;">thomas malll</h2>-->
-        <ion-item *ngFor="let item of items">
-          {{item}}
-        </ion-item>
-        <p style="margin-left: 15%;">3/4 convives</p>
-        <h3 style="margin-left: 15%;">Mardi 23 OCT. 20H00</h3>
-
+        <img class="avatar" src="http://www.web-soluces.net/webmaster/avatar/FaceCo-Homme.png">        
       </ion-avatar>
 
       <div class="droite">
         <img src="../../assets/imgs/tajin.jpg">
       </div>
     </ion-item>
-  </ion-card>
 
+  </ion-card>
 </ion-content>

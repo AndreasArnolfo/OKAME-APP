@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 441:
+/***/ 587:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EntrancePageModule", function() { return EntrancePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageriPageModule", function() { return MessageriPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__entrance__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__messageri__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EntrancePageModule = /** @class */ (function () {
-    function EntrancePageModule() {
+var MessageriPageModule = /** @class */ (function () {
+    function MessageriPageModule() {
     }
-    EntrancePageModule = __decorate([
+    MessageriPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__entrance__["a" /* EntrancePage */],
+                __WEBPACK_IMPORTED_MODULE_2__messageri__["a" /* MessageriPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__entrance__["a" /* EntrancePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__messageri__["a" /* MessageriPage */]),
             ],
         })
-    ], EntrancePageModule);
-    return EntrancePageModule;
+    ], MessageriPageModule);
+    return MessageriPageModule;
 }());
 
-//# sourceMappingURL=entrance.module.js.map
+//# sourceMappingURL=messageri.module.js.map
 
 /***/ })
 

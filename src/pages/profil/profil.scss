@@ -1,0 +1,62 @@
+.container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: #2d2d2d 1px 1px 10px;
+  border-radius: 30px 30px 0px 0px;
+  position: relative;
+  top: 50px;
+  padding-bottom: 25px;
+  font-family: MontserratRegular;
+
+  .groupePart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .photoPart {
+      width: 78%;
+      height: 117px;
+      border-radius: 30px;
+      background: url("../../assets/imgs/eiliv-sonas-aceron-776219-unsplash.jpg") no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .photoPartBox{
+        width: 84px;
+        height: 84px;
+        border-radius: 42px;
+        border: white solid 3px;
+        overflow: hidden;
+        object-fit: cover;
+
+        img{
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+  }
+
+  .groupeDer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .photoRepas{
+      width: 78%;
+      height: 117px;
+      border-radius: 30px;
+    }
+  }
+}
+
+.textPart{
+  font-size: 15px;
+
+  .imagePart{
+    width: 93px;
+  }
+}
